@@ -2,6 +2,7 @@ function timer() {
 	count_s="$(($1 * 60))"
 	count_m="$1"
 	message="$2"
+	phone_number="5555555555"
 	the_date=$(date)
 	echo "$the_date - Set timer for $count_m min. ($count_s seconds.)"
 	echo ""
@@ -14,7 +15,7 @@ function timer() {
 	done
 
 	osascript -e 'display notification "The timer you set is finished." with title "$message" subtitle "Times up sucka..." sound name "Purr"'
-	curl -X POST http://textbelt.com/text -d number=5408458516 -d "message=$message"
+	curl -X POST http://textbelt.com/text -d "number=$phone_number" -d "message=$message"
 
 	for i in `seq 1 2`; do
 		say "$message"
