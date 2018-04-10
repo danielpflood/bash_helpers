@@ -15,7 +15,7 @@ function timer() {
   ntfy -b pushover -o user_key uf2wrk5q6pi5vu2yn1b9mgr1ce4j9b send "$message"
   osascript -e 'display notification "The timer you set is finished." with title "$message" subtitle "Times up sucka..." sound name "Purr"'
   echo 'Timer finished -> "$message"' | terminal-notifier -sound default
-  # curl -X POST http://textbelt.com/text -d number=5408458516 -d "message=$message"
+  # curl -X POST http://textbelt.com/text -d number=5555555555 -d "message=$message"
 
   for i in `seq 1 2`; do
     say "$message"
